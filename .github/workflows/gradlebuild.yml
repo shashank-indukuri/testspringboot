@@ -37,8 +37,6 @@ jobs:
         with:
           distribution: "temurin"
           java-version: "17"
-          cache: "gradle"
-      - run: ./gradlew build --no-daemon
       # Build the application with Gradle
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2

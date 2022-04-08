@@ -66,17 +66,9 @@ jobs:
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
     steps:
-      #Download JAR file
+      #Download JAR files
       - name: Download JAR
         #Download the artifact which was uploaded in the build's job
         uses: actions/download-artifact@v3
         with:
           name: build-artifact
-      #Deploy to Heroku
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "test-spring-boot-cicd" #Must be unique in Heroku
-          heroku_email: "shashank.indukuri05@gmail.com"
-          appdir: /
